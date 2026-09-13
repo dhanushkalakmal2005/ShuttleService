@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Recovery</title>
+  <style>
+    /* Recovery Page Specific */
+.container {
+  width: 350px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #D2D4C8; /* Dust Grey */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(46, 53, 50, 0.5); /* Gunmetal shadow */
+}
+
+h2 {
+  text-align: center;
+  color: #2E3532; /* Gunmetal */
+  margin-bottom: 20px;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #2E3532;
+  border-radius: 5px;
+  background-color: #E0E2DB; /* Soft Linen */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #8B2635; /* Dark Amaranth */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2E3532; /* Gunmetal */
+}
+
+a {
+  color: #8B2635;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Reset Your Password</h2>
+    <form>
+      <label for="email">Email</label>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Send Reset Link</button>
+    </form>
+    <p><a href="login.html">Back to Login</a></p>
+  </div>
+  <script>
+    // Password Recovery Script
+document.addEventListener("DOMContentLoaded", function () {
+  const recoverForm = document.getElementById("recoverForm");
+
+  recoverForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+
+    if (email === "") {
+      alert("⚠️ Please enter your email address.");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      alert("⚠️ Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate sending reset link
+    alert("✅ A password reset link has been sent to " + email);
+
+    // Redirect back to login after success
+    window.location.href = "login.html";
+  });
+});
+
+  </script>
+</body>
+</html>
